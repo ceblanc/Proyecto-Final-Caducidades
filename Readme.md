@@ -20,6 +20,16 @@ librerías y la utilización de un framework
 El objetivo de este proyecto es superar el proyecto de fin de curso
 para obtener el título "Programación Pyhton"
 
+## Diseno
+
+```mermaid
+sequenceDiagram
+    participant A as Alice
+    participant J as John
+    A->>J: Hello John, how are you?
+    J->>A: Great!
+```
+
 ## Construido con
 
 -Python
