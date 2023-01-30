@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__) #En app se encuentra el servidor web de Flask
 
@@ -6,7 +6,7 @@ app = Flask(__name__) #En app se encuentra el servidor web de Flask
 
 @app.route('/')
 def home():
-    return 'NOMBRE'
+    return render_template("index.html")
 
 if __name__ == '__main__':
     app.run(debug=True) #El debug=True hace que cada vez que reiniciemos el servidor o modifiquemos código, el servidor de Flask se reinicie solo
