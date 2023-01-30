@@ -1,86 +1,47 @@
-# CONTROL DE CADUCIDADES
+# NOMBRE
 
-El programa de control de caducidades permite dar de alta
-artículos con diferentes características, entre ellas,
-un stock asociado a un lote y una fecha, y una fecha de caducidad.
 
-Se realizarán recuentos diarios de las unidades en stock
-de cada producto y se registrarán en una base de datos.
+## Nombre
 
-El programa permite consultar y manejar las unidades próximas a la 
-caducidad registrada, así como las unidades caducadas.
+NOMBRE es un programa que permite el control del stock por fechas de caducidad y/o
+lote en un pequeño inventario. NOMBRE permite el registro de fichas de artículo,
+asociar diferentes lotes y/o fechas de caducidad estos productos,
+modificar estas características en recuentos posteriores, y realizar
+consultas de los diferentes datos de la base de datos.
+
+## Funciones avanzadas
+
+NOMBRE permite, además del registro, modificación y control manual de
+las fechas de caducidad del inventario:
+
+- Importar artículos mediante un archivo csv
+- Generar listados por fechas de caducidad próximas
 
 ## Requisitos
 
-El programa debe incluir programación de objetos, bases de datos,
-librerías y la utilización de un framework
+NOMBRE está creado con el lenguaje de programación Python, el framework
+Flask y el gestor de bases de datos SQLite. Por lo tanto, es
+necesario la instalación de estos tres elementos para su funcionamiento,
+del siguiente modo:
 
-## Objetivo
+### Instalación de Pycharm
 
-El objetivo de este proyecto es superar el proyecto de fin de curso
-para obtener el título "Programación Pyhton"
+La instalación del IDE PyCharm no es estrictamente necesaria, pero se
+indica aquí al ser el entorno de desarrollo utilizado en el proyecto.
 
-## Diseno
+PyCharm debe instalarse desde la url https://www.jetbrains.com/es-es/pycharm/download/,
+siguiendo los pasos indicados por el instalador.
 
-```mermaid
-sequenceDiagram
-    participant A as Alice
-    participant J as John
-    A->>J: Hello John, how are you?
-    J->>A: Great!
-```
+### Instalación de Python
 
-#Probando UML
+Instalar Python desde https://www.python.org/ftp/python/3.11.1/python-3.11.1-amd64.exe
 
-### uml: class diagram
-```plantuml
-@startuml
-package "customer domain" #DDDDDD {
-    class Contact {
-        + email
-        + phone
-    }
+### Instalación del Entorno Virtual
 
-    class Address {
-        + address1
-        + address2
-        + city
-        + region
-        + country
-        + postalCode
-        + organization
-    }
+(Describir instalación desde requirements.txt)
 
-    note right of Address 
-        There are two types of 
-        addresses: billing and shipping
-    end note
+## Configuración
 
-    class Customer {
-    }
+NOMBRE no requiere ninguna configuración adicional
 
-    Customer *-- Contact
-    Customer *-- ShippingAddress
-    Customer *-- BillingAddress
-    Customer *--{ SalesOrder
 
-    class ShippingAddress <<Address>>
-    class BillingAddress <<Address>>
-    class SalesOrder {
-        + itemDescription
-        + itemPrice
-        + shippingCost
-        + trackingNumber
-        + shipDate
-    }
-}
-@enduml
-```
-
-## Construido con
-
--Python
-
--Framwork (definir)
-
--SQLite
