@@ -1,17 +1,17 @@
-# NOMBRE
+# REGISTRAFECHAS
 
 
-## Nombre
+## Registrafechas
 
-NOMBRE es un programa que permite el control del stock por fechas de caducidad y/o
-lote en un pequeño inventario. NOMBRE permite el registro de fichas de artículo,
+Registrafechas es un programa que permite el control del stock por fechas de caducidad y/o
+lote en un pequeño inventario. Registrafechas permite el registro de fichas de artículo,
 asociar diferentes lotes y/o fechas de caducidad estos productos,
 modificar estas características en recuentos posteriores, y realizar
 consultas de los diferentes datos de la base de datos.
 
 ## Funciones avanzadas
 
-NOMBRE permite, además del registro, modificación y control manual de
+Registrafechas permite, además del registro, modificación y control manual de
 las fechas de caducidad del inventario:
 
 - Importar artículos mediante un archivo csv
@@ -19,7 +19,7 @@ las fechas de caducidad del inventario:
 
 ## Requisitos
 
-NOMBRE está creado con el lenguaje de programación Python, el framework
+Registrafechas está creado con el lenguaje de programación Python, el framework
 Flask y el ORM SQL Alchemy y el gestor de bases de datos SQLite. Por lo tanto, es
 necesario la instalación de estos tres elementos para su funcionamiento,
 del siguiente modo:
@@ -42,6 +42,6 @@ Instalar Python desde https://www.python.org/ftp/python/3.11.1/python-3.11.1-amd
 
 ## Configuración
 
-NOMBRE no requiere ninguna configuración adicional
+Registrafechas no requiere ninguna configuración adicional
 
 
