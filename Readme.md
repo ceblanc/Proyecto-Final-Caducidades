@@ -20,7 +20,7 @@ las fechas de caducidad del inventario:
 ## Requisitos
 
 NOMBRE está creado con el lenguaje de programación Python, el framework
-Flask y el gestor de bases de datos SQLite. Por lo tanto, es
+Flask y el ORM SQL Alchemy y el gestor de bases de datos SQLite. Por lo tanto, es
 necesario la instalación de estos tres elementos para su funcionamiento,
 del siguiente modo:
 
