@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrafechas. App para el Control de Caducidades</title>
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css">
+
+    <!-- Vinculación index.html con main.css -->
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
 </head>
 <body>
     <main>
         <h1>Estoy en el index.html</h1>
+        <div class="d-grid gap-2">
+            <button class="btn btn-lg btn-primary" type="button">Block button</button>
+            <button class="btn btn-lg btn-primary" type="button">Block button</button>
+        </div>
     </main>
 </body>
 </html>

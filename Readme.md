@@ -17,12 +17,14 @@ las fechas de caducidad del inventario:
 - Importar artículos mediante un archivo csv
 - Generar listados por fechas de caducidad próximas
 
-## Requisitos
+## Tecnologías empleadas y requisitos
 
-Registrafechas está creado con el lenguaje de programación Python, el framework
-Flask y el ORM SQL Alchemy y el gestor de bases de datos SQLite. Por lo tanto, es
-necesario la instalación de estos tres elementos para su funcionamiento,
-del siguiente modo:
+Para crear Registrafechas se ha empleado el lenguaje de programación Python utilizando
+el IDE PyCharm. Para la creación de la aplicación web se ha utilizado el framework Flask,
+y la conexión de las clases con la base de datos se ha realizado con el ORM SQL Alchemy.
+El gestor de bases de datos empleado es SQLite.
+
+Por lo tanto, es necesario la instalación de estos elementos para su funcionamiento:
 
 ### Instalación de Pycharm
 
@@ -39,6 +41,10 @@ Instalar Python desde https://www.python.org/ftp/python/3.11.1/python-3.11.1-amd
 ### Instalación del Entorno Virtual
 
 (Describir instalación desde requirements.txt)
+
+### Instalación de SQLite
+
+(Describir instalación de SQLite)
 
 ## Configuración
 
