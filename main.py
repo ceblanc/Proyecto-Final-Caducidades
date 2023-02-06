@@ -13,10 +13,10 @@ def informes():
 
 @app.route('/articulos')
 def articulos():
-    return 'articulos'
+    return render_template('articulos.html')
 @app.route('/fechas')
 def fechas():
-    return 'fechas'
+    return render_template('fechas.html')
 
 if __name__ == '__main__':
     app.run(debug=True) #El debug=True hace que cada vez que reiniciemos el servidor o modifiquemos código, el servidor de Flask se reinicie solo

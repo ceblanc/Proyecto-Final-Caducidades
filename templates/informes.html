@@ -2,7 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Registrafechas. Informes</title>
+
+  <!-- Boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css">
+
+    <!-- Vinculación index.html con main.css -->
+
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
 </head>
 <body>
 <!-- Barra de Navegación Bootswatch Spacelab -->
@@ -16,12 +23,10 @@
             <div class="collapse navbar-collapse" id="navbarColor03">
               <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Inicio
-                    <span class="visually-hidden">(current)</span>
-                  </a>
+                  <a class="nav-link" href="/">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="informes">Informes</a>
+                  <a class="nav-link active" href="informes">Informes</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="articulos">Artículos</a>

@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registrafechas. App para el Control de Caducidades</title>
-
+    <title>Registrafechas. Artículos</title>
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css">
 
@@ -12,8 +11,7 @@
     <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
 </head>
 <body>
-    <main>
-        <!-- Barra de Navegación Bootswatch Spacelab -->
+<!-- Barra de Navegación Bootswatch Spacelab -->
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
@@ -24,13 +22,13 @@
             <div class="collapse navbar-collapse" id="navbarColor03">
               <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="/">Inicio</a>
+                  <a class="nav-link" href="/">Inicio</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="informes">Informes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="articulos">Artículos</a>
+                  <a class="nav-link active" href="articulos">Artículos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="fechas">Fechas</a>
@@ -42,18 +40,5 @@
 
         <!-- Separador -->
         <div class="separador"></div>
-
-        <!-- Etiqueta de la pantalla de inicio -->
-
-        <div class="row">
-            <div class="col-md-6 offset-md-3 my-auto">
-                <!-- Disclaimer Bootswatch Spacelab-->
-                    <div class="alert alert-dismissible alert-secondary">
-                      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                      <strong>¡Bienvenido!</strong> Vas a utilizar el programa Registrafechas <a href="#" class="alert-link">Utiliza la barra de navegación para acceder a todas las funcionalidades</a>.
-                    </div>
-            </div>
-        </div>
-    </main>
 </body>
 </html>
