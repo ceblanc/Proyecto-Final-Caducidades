@@ -5,3 +5,7 @@ body {
 .separador {
     background-color:white; margin: 5px; width: 50px; height: 80px;
 }
+
+.separador_pequeno {
+    background-color:white; margin: 5px; width: 50px; height: 5px;
+}
