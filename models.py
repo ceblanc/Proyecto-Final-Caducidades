@@ -1,12 +1,12 @@
 import db
 from sqlalchemy import Column, Integer, String, Boolean
 
-class Producto(db.Base)
+class Producto(db.Base):
     __tablename__ = "producto"
     idProducto = Column(Integer, primary_key = True) #Identificador único de producto
-    nombreProducto = Column(String(100)), nullable = False)
-    referenciaProducto = Column(String(20)), nullable = False)
-    codigoBarras = Column(Integer(13)), nullable = False)
+    nombreProducto = Column(String(100), nullable = False)
+    referenciaProducto = Column(String(20), nullable = False)
+    codigoBarras = Column(Integer, nullable = False)
     marca = Column(String(20), nullable = False)
     proveedor = Column(String(30), nullable = False)
     activo = Column(Boolean)
@@ -21,4 +21,4 @@ class Producto(db.Base)
         self.activo = activo
 
         def __repr__(self):
-            return "Producto {} creado".format(self.nombreProducto)
+            return "Producto {} creado".foprodurmat(self.nombreProducto)
