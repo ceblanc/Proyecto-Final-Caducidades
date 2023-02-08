@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registrafechas. Artículos</title>
+    <title>Registrafechas. Productos</title>
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css">
 
@@ -13,7 +13,7 @@
 <body>
 <!-- Barra de Navegación Bootswatch Spacelab -->
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">Registrafechas</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
                   <a class="nav-link" href="informes">Informes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="articulos">Artículos</a>
+                  <a class="nav-link active" href="productos">Productos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="fechas">Fechas</a>
@@ -36,10 +36,10 @@
               </ul>
             </div>
           </div>
-        </nav>
+    </nav>
 
-        <!-- Separador pequeño-->
-        <div class="separador_pequeno"></div>
+    <!-- Separador pequeño-->
+    <div class="separador_pequeno"></div>
 
     <!-- Botonera de selección para acceder sin scroll a las funciones Nuevo, Editar, Eliminar -->
     <div class="col-md-6 offset-md-5 my-auto">
@@ -51,9 +51,9 @@
     </div>
     <!-- Formulario de registro de producto-->
     <div class="col-md-6 offset-md-3 my-auto">
-
-        <div class="form-group">
-          <label class="form-group mt-2"><b>Registrar Nuevo Producto</b></label>
+        <form action="">
+            <div class="form-group">
+                <label class="form-group mt-2"><b>Registrar Nuevo Producto</b></label>
             <div class="form-group">
                 <fieldset disabled="">
                 <label class="form-label" for="disabledInput">idProducto</label>
@@ -86,6 +86,7 @@
             <button type="submit" class="btn btn-secondary">Guardar Cambios</button>
 
           </div>
+        </form>
     </div>
 </body>
 </html>

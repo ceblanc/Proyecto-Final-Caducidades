@@ -11,9 +11,9 @@ def home():
 def informes():
     return render_template("informes.html")
 
-@app.route('/articulos')
-def articulos():
-    return render_template('articulos.html')
+@app.route('/productos')
+def productos():
+    return render_template('productos.html')
 @app.route('/fechas')
 def fechas():
     return render_template('fechas.html')
