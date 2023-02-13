@@ -12,7 +12,8 @@ def home():
     return render_template("index.html")
 @app.route('/informes')
 def informes():
-    return render_template("informes.html")
+    todos_los_productos = db.session.query(Producto).all() #Consultamos y almacenamos todos los productos de la bbdd
+    return render_template("informes.html", lista_de_productos = todos_los_productos)
 
 @app.route('/productos')
 def productos():

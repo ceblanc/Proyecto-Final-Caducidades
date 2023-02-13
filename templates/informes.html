@@ -38,5 +38,14 @@
             </div>
           </div>
         </nav>
+        <div>
+            <ul>
+                {% for producto in lista_de_productos %}
+                <li>
+                    {{producto.nombreProducto}}
+                </li>
+                {% endfor%}
+            </ul>
+        </div>
 </body>
 </html>
