@@ -51,7 +51,7 @@
     </div>
     <!-- Formulario de registro de producto-->
     <div class="col-md-6 offset-md-3 my-auto">
-        <form action="">
+        <form action="/productos/crear-producto" method="post">
             <div class="form-group">
                 <label class="form-group mt-2"><b>Registrar Nuevo Producto</b></label>
             <div class="form-group">
@@ -66,19 +66,19 @@
             </div>
             <div class="form-group mt-2">
                 <label for="floatingReferencia">Referencia</label>
-                <input type="text" class="form-control" id="floatingReferencia" placeholder="Referencia">
+                <input type="text" name="referencia" class="form-control" id="floatingReferencia" placeholder="Referencia">
             </div>
             <div class="form-group mt-2">
                 <label for="floatingCodBarras">Código de Barras</label>
-                <input type="text" class="form-control" id="floatingCodBarras" placeholder="Código de Barras">
+                <input type="text" name="codigoBarras" class="form-control" id="floatingCodBarras" placeholder="Código de Barras">
             </div>
             <div class="form-group mt-2">
                 <label for="floatingMarca">Marca</label>
-                <input type="text" class="form-control" id="floatingMarca" placeholder="Marca">
+                <input type="text" name="marca"class="form-control" id="floatingMarca" placeholder="Marca">
             </div>
             <div class="form-group mt-2">
                 <label for="floatingProveedor">Proveedor</label>
-                <input type="text" class="form-control" id="floatingProveedor" placeholder="Proveedor">
+                <input type="text" name="proveedor" class="form-control" id="floatingProveedor" placeholder="Proveedor">
             </div>
 
           <div class="col-md-6 offset-md-5 my-auto">

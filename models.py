@@ -3,7 +3,7 @@ from sqlalchemy import Column, Integer, String, Boolean
 
 class Producto(db.Base):
     __tablename__ = "producto"
-    idProducto = Column(Integer, primary_key = True) #Identificador único de producto
+    idProducto = Column(Integer, primary_key=True) #Identificador único de producto
     nombreProducto = Column(String(100), nullable = False)
     referenciaProducto = Column(String(20), nullable = False)
     codigoBarras = Column(Integer, nullable = False)

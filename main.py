@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for
 import db
 
 from models import Producto
@@ -20,6 +20,14 @@ def productos():
 @app.route('/fechas')
 def fechas():
     return render_template('fechas.html')
+
+@app.route('/productos/crear-producto', methods=['POST'])
+def crear():
+    #producto es un objeto de la clase Producto
+    producto=Producto(idProducto=None, nombreProducto=request.form['nombre'],referenciaProducto=request.form['referencia'],codigoBarras=request.form['codigoBarras'],marca=request.form['marca'],proveedor=request.form['proveedor'],activo=True)
+    db.session.add(producto) #Añadir el objeto de Producto a la base de datos
+    db.session.commit() #Ejecutar la operación pendiente de la base de datos
+    return "Producto creado"
 
 if __name__ == '__main__':
     db.Base.metadata.create_all(db.engine) #Creación del modelo de datos
