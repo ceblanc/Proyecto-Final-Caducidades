@@ -38,14 +38,35 @@
             </div>
           </div>
         </nav>
+        <div class="separador_pequeno"></div>
+        <div><h1>Todos los productos</h1></div>
+        <div class="separador_pequeno"></div>
         <div>
-            <ul>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">id</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Referencia</th>
+                  <th scope="col">Cód. de Barras</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Proveedor</th>
+                </tr>
+              </thead>
+              <tbody>
                 {% for producto in lista_de_productos %}
-                <li>
-                    {{producto.nombreProducto}}
-                </li>
-                {% endfor%}
-            </ul>
+                <tr>
+                  <th scope="row"></th>
+                  <td>{{producto.idProducto}}</td>
+                  <td>{{producto.nombreProducto}}</td>
+                  <td>{{producto.referenciaProducto}}</td>
+                  <td>{{producto.codigoBarras}}</td>
+                  <td>{{producto.marca}}</td>
+                  <td>{{producto.proveedor}}</td>
+                  {% endfor%}
+                </tr>
+              </tbody>
         </div>
 </body>
 </html>
