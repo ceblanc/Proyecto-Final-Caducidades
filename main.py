@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, redirect, url_for
 import db
 
 from models import Producto
@@ -28,7 +28,13 @@ def crear():
     producto=Producto(idProducto=None, nombreProducto=request.form['nombre'],referenciaProducto=request.form['referencia'],codigoBarras=request.form['codigoBarras'],marca=request.form['marca'],proveedor=request.form['proveedor'],activo=True)
     db.session.add(producto) #Añadir el objeto de Producto a la base de datos
     db.session.commit() #Ejecutar la operación pendiente de la base de datos
-    return "Producto creado"
+    return redirect(url_for('productos')) #Redirección a la página de productos
+
+@app.route('/productos/eliminar-producto/<idProducto>')
+def eliminar(idProducto):
+    producto = db.session.query(Producto).filter_by(id=int(idProducto)).delete()
+    db.session.commit()
+    return redirect(url_for('productos'))
 
 if __name__ == '__main__':
     db.Base.metadata.create_all(db.engine) #Creación del modelo de datos

@@ -52,6 +52,7 @@
                   <th scope="col">Cód. de Barras</th>
                   <th scope="col">Marca</th>
                   <th scope="col">Proveedor</th>
+                  <th scope="col">Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -64,6 +65,7 @@
                   <td>{{producto.codigoBarras}}</td>
                   <td>{{producto.marca}}</td>
                   <td>{{producto.proveedor}}</td>
+                  <td><span class="badge bg-light"><a href="">Editar</a></span>&nbsp;<span class="badge bg-light"><a href="">Eliminar</a></pspan></td>
                   {% endfor%}
                 </tr>
               </tbody>
