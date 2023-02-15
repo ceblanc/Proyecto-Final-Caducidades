@@ -32,9 +32,9 @@ def crear():
 
 @app.route('/productos/eliminar-producto/<idProducto>')
 def eliminar(idProducto):
-    producto = db.session.query(Producto).filter_by(id=int(idProducto)).delete()
+    producto = db.session.query(Producto).filter_by(idProducto=int(idProducto)).delete()
     db.session.commit()
-    return redirect(url_for('productos'))
+    return redirect(url_for('informes'))
 
 if __name__ == '__main__':
     db.Base.metadata.create_all(db.engine) #Creación del modelo de datos
