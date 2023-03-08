@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
+import sqlite3 as sql
+
 import db
 
 from models import Producto
@@ -35,6 +37,11 @@ def eliminar(idProducto):
     producto = db.session.query(Producto).filter_by(idProducto=int(idProducto)).delete()
     db.session.commit()
     return redirect(url_for('informes'))
+
+@app.route('/editar-producto/<numProducto>')
+def editar(numProducto):
+    edit = db.session.query(Producto).filter_by(idProducto=numProducto).first()
+    return render_template("editar-producto.html", numProducto=numProducto, edit=edit)
 
 if __name__ == '__main__':
     db.Base.metadata.create_all(db.engine) #Creación del modelo de datos

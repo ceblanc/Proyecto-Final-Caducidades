@@ -3,3 +3,5 @@
 
 # Añadir un límite de caracteres al integer del atributo codBarras de la clase Producto
 # Al definir un límite para el tipo integer genera error.
+
+# Conseguir redirigir el boton eliminar a la consulta a ese id de producto en editar-producto

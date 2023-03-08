@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrafechas. Editar Producto</title>
+
+  <!-- Boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css">
+
+    <!-- Vinculación index.html con main.css -->
+
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+</head>
+<body>
+<!-- Barra de Navegación Bootswatch Spacelab -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Registrafechas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="informes">Informes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="fechas">Fechas</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="separador_pequeno"></div>
+        <div><h1>Todos los productos</h1></div>
+        <div class="separador_pequeno"></div>
+
+        <!-- Formulario de edición de producto-->
+
+    <div class="col-md-6 offset-md-3 my-auto">
+        <form action="/productos/editar-producto" method="post">
+            <div class="form-group">
+                <label class="form-group mt-2"><b>Editar Producto</b></label>
+            <div class="form-group">
+                <fieldset disabled="">
+                <label class="form-label" for="disabledInput">idProducto</label>
+                <input class="form-control" id="disabledInput" type="text" placeholder={{numProducto}} disabled="">
+                </fieldset>
+            </div>
+            <div class="form-group mt-2">
+                <label for="floatingNombre">Nombre</label>
+                <input type="text" name="nombre" class="form-control" autofocus id="floatingNombre" placeholder={{edit.nombreProducto}}>
+            </div>
+            <div class="form-group mt-2">
+                <label for="floatingReferencia">Referencia</label>
+                <input type="text" name="referencia" class="form-control" id="floatingReferencia" placeholder={{edit.referenciaProducto}}>
+            </div>
+            <div class="form-group mt-2">
+                <label for="floatingCodBarras">Código de Barras</label>
+                <input type="text" name="codigoBarras" class="form-control" id="floatingCodBarras" placeholder="{{edit.codigoBarras}}">
+            </div>
+            <div class="form-group mt-2">
+                <label for="floatingMarca">Marca</label>
+                <input type="text" name="marca"class="form-control" id="floatingMarca" placeholder={{edit.marca}}>
+            </div>
+            <div class="form-group mt-2">
+                <label for="floatingProveedor">Proveedor</label>
+                <input type="text" name="proveedor" class="form-control" id="floatingProveedor" placeholder={{edit.proveedor}}>
+            </div>
+            </div>
+          <div class="col-md-6 offset-md-5 my-auto">
+
+            <button type="submit" class="btn btn-secondary">Guardar Cambios</button>
+
+          </div>
+</body>
+</html>
