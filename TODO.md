@@ -5,3 +5,7 @@
 # Al definir un límite para el tipo integer genera error.
 
 # Conseguir redirigir el boton eliminar a la consulta a ese id de producto en editar-producto
+
+Resolver el problema de navegación en la página informes. Cambiar la cabecera
+
+Crear un aviso html para obligar a rellenar todos los campos del artículo

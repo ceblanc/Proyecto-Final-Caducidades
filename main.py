@@ -43,6 +43,18 @@ def editar(numProducto):
     edit = db.session.query(Producto).filter_by(idProducto=numProducto).first()
     return render_template("editar-producto.html", numProducto=numProducto, edit=edit)
 
+@app.route('/confirmar-producto/<numProducto>', methods=['POST'])
+def confirmar(numProducto):
+    numProducto = db.session.query(Producto).filter_by(idProducto=int(numProducto)).delete()
+    numProducto_alt = Producto(idProducto=None, nombreProducto=request.form['nombre'],referenciaProducto=request.form['referencia'],codigoBarras=request.form['codigoBarras'],marca=request.form['marca'],proveedor=request.form['proveedor'],activo=True)
+    db.session.add(numProducto_alt)  # Añadir el objeto de Producto a la base de datos
+    db.session.commit()  # Ejecutar la operación pendiente de la base de datos
+    #numProducto=Producto(idProducto=None, nombreProducto=request.form['nombre'],referenciaProducto=request.form['referencia'],codigoBarras=request.form['codigoBarras'],marca=request.form['marca'],proveedor=request.form['proveedor'],activo=True)
+    #numProducto.verified = True
+    #db.session.update(producto) #Añadir el objeto de Producto a la base de datos
+    #db.session.commit() #Ejecutar la operación pendiente de la base de datos
+    return redirect(url_for('informes')) #Redirección a la página de productos
+
 if __name__ == '__main__':
     db.Base.metadata.create_all(db.engine) #Creación del modelo de datos
     app.run(debug=True) #El debug=True hace que cada vez que reiniciemos el servidor o modifiquemos código, el servidor de Flask se reinicie solo
