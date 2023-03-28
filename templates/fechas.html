@@ -38,8 +38,26 @@
           </div>
         </nav>
 
-        <!-- Separador -->
-        <div class="separador"></div>
+    <!-- Alta y Baja de Fechas-->
+    <div class="col-md-6 offset-md-3 my-auto">
+        <form action="/fechas/crear-fecha" method="post">
+            <div class="form-group">
+                <label class="form-group mt-2"><b>Alta y Baja de Fechas</b></label>
+            <div class="form-group mt-2">
+                <label for="floatingIdProductoFecha">idProducto</label>
+                <input type="text" name="idProductoFecha" class="form-control" id="floatingIdProductoFecha" placeholder="idProducto">
+            </div>
+            <div class="form-group mt-2">
+                <label for="floatingFecha">Fecha</label>
+                <input type="text" name="fecha"class="form-control" id="floatingFecha" placeholder="Fecha">
+            </div>
 
+            <button type="submit" class="btn btn-secondary">Crear Fecha</button>
+            <button type="submit" class="btn btn-secondary">Eliminar Última Fecha</button>
+            <button type="submit" class="btn btn-secondary">Sobreescribir Última Fecha</button>
+
+          </div>
+        </form>
+    </div>
 </body>
 </html>

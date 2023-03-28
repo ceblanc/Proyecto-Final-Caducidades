@@ -3,7 +3,7 @@ import sqlite3 as sql
 
 import db
 
-from models import Producto
+from models import Producto, Fecha
 
 app = Flask(__name__) #En app se encuentra el servidor web de Flask
 
@@ -23,6 +23,13 @@ def productos():
 @app.route('/fechas')
 def fechas():
     return render_template('fechas.html')
+
+@app.route('/fechas/crear-fecha',methods=['POST'])
+def crearFecha():
+    fechaRegistro=Fecha(idFecha=None,idProductoFecha=4,nombreProductoFecha=None,fecha=request.form['fecha'],activoFecha=True)
+    db.session.add(fechaRegistro)  # Añadir el objeto de Producto a la base de datos
+    db.session.commit()  # Ejecutar la operación pendiente de la base de datos
+    return redirect(url_for('fechas'))
 
 @app.route('/productos/crear-producto', methods=['POST'])
 def crear():
