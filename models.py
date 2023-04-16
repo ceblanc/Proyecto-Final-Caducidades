@@ -1,12 +1,29 @@
 import db
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy.dialects.sqlite import (
+    BLOB,
+    BOOLEAN,
+    CHAR,
+    DATE,
+    DATETIME,
+    DECIMAL,
+    FLOAT,
+    INTEGER,
+    NUMERIC,
+    JSON,
+    SMALLINT,
+    TEXT,
+    TIME,
+    TIMESTAMP,
+    VARCHAR,
+)
 
 class Producto(db.Base):
     __tablename__ = "producto"
     idProducto = Column(Integer, primary_key=True) #Identificador único de producto
-    nombreProducto = Column(String(100), nullable = False)
+    nombreProducto = Column(VARCHAR(100), nullable = False)
     referenciaProducto = Column(String(20), nullable = False)
-    codigoBarras = Column(Integer, nullable = False)
+    codigoBarras = Column(INTEGER, nullable = False)
     marca = Column(String(20), nullable = False)
     proveedor = Column(String(30), nullable = False)
     activo = Column(Boolean)
@@ -28,7 +45,7 @@ class Fecha(db.Base):
     idFecha = Column(Integer, primary_key=True) #Identificador único de fecha
     idProductoFecha = Column(Integer,ForeignKey('producto.idProducto'))
     nombreProductoFecha = Column(String, ForeignKey('producto.nombreProducto'))
-    fecha = Column(String(20), nullable = False)
+    fecha = Column(TEXT(10), nullable = False)
     activoFecha = Column(Boolean)
 
     def __init__(self,idFecha,idProductoFecha,nombreProductoFecha,fecha,activoFecha):

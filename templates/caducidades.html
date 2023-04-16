@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrafechas. Caducidades</title>
+
+  <!-- Boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css">
+
+    <!-- Vinculación index.html con main.css -->
+
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+</head>
+<body>
+<!-- Barra de Navegación Bootswatch Spacelab -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Registrafechas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="acciones">Gestión de Producto</a>
+                </li>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link active" href="caducidades">Caducidades</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="separador_pequeno"></div>
+        <div align="center"><h1>Fechas de Caducidad</h1></div>
+        <div><p>Listado de los productos ordenados por nombre de producto. Hacer funcionar el botón que selecciona los productos que caducan en los próximos 7 días</p></div>
+        <div class="separador_pequeno"></div>
+        <div class="separador_pequeno"></div>
+        <div  align="center"><button type="button" class="btn btn-light"><a href="caducidades-proximas">Productos próximos a caducar</a></button></div>
+        <div class="separador_pequeno"></div>
+        <div>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for fecha in lista_de_fechas %}
+                <tr>
+                  <th scope="row"></th>
+                  <td>{{fecha.nombreProductoFecha}}</td>
+                  <td>{{fecha.fecha}}</td>
+                  <td><span class="badge bg-light"><a href="/eliminar-fecha/{{fecha.idProductoFecha}}">Eliminar Fecha</a></span></td>
+                  {% endfor%}
+                </tr>
+              </tbody>
+        </div>
+</body>
+</html>

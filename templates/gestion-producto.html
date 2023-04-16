@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrafechas. Informes</title>
+
+  <!-- Boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css">
+
+    <!-- Vinculación index.html con main.css -->
+
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+</head>
+<body>
+<!-- Barra de Navegación Bootswatch Spacelab -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Registrafechas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="acciones">Gestión de Producto</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="caducidades">Caducidades</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="separador_pequeno"></div>
+        <div><h1 align="center">Gestión de Productos</h1></div>
+        <div class="separador_pequeno"></div>
+        <div  align="center"><button type="button" class="btn btn-light"><a href="productos">Registrar Nuevo Producto</a></button></div>
+        <div class="separador_pequeno"></div>
+        <div class="separador_pequeno"></div>
+        <div>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">id</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Referencia</th>
+                  <th scope="col">Cód. de Barras</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Proveedor</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for producto in lista_de_productos %}
+                <tr>
+                  <th scope="row"></th>
+                  <td>{{producto.idProducto}}</td>
+                  <td>{{producto.nombreProducto}}</td>
+                  <td>{{producto.referenciaProducto}}</td>
+                  <td>{{producto.codigoBarras}}</td>
+                  <td>{{producto.marca}}</td>
+                  <td>{{producto.proveedor}}</td>
+                    <td><span class="badge bg-light"><a href="/editar-producto/{{producto.idProducto}}">Modificar</a></span>&nbsp;<span class="badge bg-light"><a href="/productos/eliminar-producto/{{producto.idProducto}}">Eliminar</a></span>&nbsp;<span class="badge bg-light"><a href="/fechas/crear-fecha/{{producto.idProducto}}">Alta Fecha</a></span></td>
+                  {% endfor%}
+                </tr>
+              </tbody>
+        </div>
+</body>
+</html>

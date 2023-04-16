@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registrafechas. Informes</title>
+    <title>Registrafechas. Caducidades Próximas</title>
 
   <!-- Boostrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css">
@@ -26,46 +26,35 @@
                   <a class="nav-link" href="/">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="informes">Informes</a>
+                  <a class="nav-link" href="acciones">Gestión de Producto</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="productos">Productos</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="fechas">Fechas</a>
+                  <li class="nav-item">
+                  <a class="nav-link" href="caducidades">Caducidades</a>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
         <div class="separador_pequeno"></div>
-        <div><h1>Todos los productos</h1></div>
+        <div align="center"><h1>Fechas de Caducidad Próximas</h1></div>
         <div class="separador_pequeno"></div>
+
         <div>
             <table class="table table-hover">
               <thead>
                 <tr>
                   <th scope="col"></th>
-                  <th scope="col">id</th>
                   <th scope="col">Nombre</th>
-                  <th scope="col">Referencia</th>
-                  <th scope="col">Cód. de Barras</th>
-                  <th scope="col">Marca</th>
-                  <th scope="col">Proveedor</th>
-                  <th scope="col">Acciones</th>
+                  <th scope="col">Fecha</th>
                 </tr>
               </thead>
               <tbody>
-                {% for producto in lista_de_productos %}
+                {% for fecha in lista_de_fechas_proximas %}
                 <tr>
                   <th scope="row"></th>
-                  <td>{{producto.idProducto}}</td>
-                  <td>{{producto.nombreProducto}}</td>
-                  <td>{{producto.referenciaProducto}}</td>
-                  <td>{{producto.codigoBarras}}</td>
-                  <td>{{producto.marca}}</td>
-                  <td>{{producto.proveedor}}</td>
-                  <td><span class="badge bg-light"><a href="/editar-producto/{{producto.idProducto}}">Modificar</a></span>&nbsp;<span class="badge bg-light"><a href="/productos/eliminar-producto/{{producto.idProducto}}">Eliminar</a></pspan></td>
+                  <td>{{fecha.nombreProductoFecha}}</td>
+                  <td>{{fecha.fecha}}</td>
                   {% endfor%}
                 </tr>
               </tbody>
