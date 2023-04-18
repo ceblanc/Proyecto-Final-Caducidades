@@ -23,7 +23,7 @@ def caducidades():
 
 @app.route('/caducidades-proximas')
 def caducidadesProximas():
-    fechas_proximas = db.session.query(Fecha).all() #Consultamos y almacenamos todas las fechas de la bbdd
+    fechas_proximas = db.session.query(Fecha).order_by(Fecha.fecha) #Consultamos y ordenamos todas las fechas de la bbdd
     return render_template("caducidades-proximas.html", lista_de_fechas_proximas = fechas_proximas)
 
 @app.route('/productos')
