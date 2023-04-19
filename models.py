@@ -22,7 +22,7 @@ class Producto(db.Base):
     __tablename__ = "producto"
     idProducto = Column(Integer, primary_key=True) #Identificador único de producto
     nombreProducto = Column(VARCHAR(100), nullable = False)
-    referenciaProducto = Column(String(20), nullable = False)
+    referenciaProducto = Column(VARCHAR(20), nullable = False)
     codigoBarras = Column(INTEGER, nullable = False)
     marca = Column(String(20), nullable = False)
     proveedor = Column(String(30), nullable = False)

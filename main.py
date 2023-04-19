@@ -16,6 +16,7 @@ def home():
 def acciones():
     todos_los_productos = db.session.query(Producto).all() #Consultamos y almacenamos todos los productos de la bbdd
     return render_template("gestion-producto.html", lista_de_productos = todos_los_productos)
+
 @app.route('/caducidades')
 def caducidades():
     todas_las_fechas = db.session.query(Fecha).all() #Consultamos y almacenamos todas las fechas de la bbdd
@@ -73,7 +74,7 @@ def editar(numProducto):
 
 @app.route('/confirmar-producto/<numProducto>', methods=['POST'])
 def confirmar(numProducto):
-    #numProducto = db.session.query(Producto).filter_by(idProducto=int(numProducto)).delete() POSIBLE ERROR COPIA PEGA
+    numProducto = db.session.query(Producto).filter_by(idProducto=int(numProducto)).delete()
     numProducto_alt = Producto(idProducto=None, nombreProducto=request.form['nombre'],referenciaProducto=request.form['referencia'],codigoBarras=request.form['codigoBarras'],marca=request.form['marca'],proveedor=request.form['proveedor'],activo=True)
     db.session.add(numProducto_alt)  # Añadir el objeto de Producto a la base de datos
     db.session.commit()  # Ejecutar la operación pendiente de la base de datos
